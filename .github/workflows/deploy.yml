@@ -22,11 +22,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Optional “CI” step: simple sanity check
       - name: Verify index.html exists
         run: test -f index.html
 
-      # Upload the site as an artifact for deployment
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
