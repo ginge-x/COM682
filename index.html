@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CineTalk</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brand">CineTalk</div>
+
+    <div class="searchWrap">
+      <input id="searchInput" class="search" type="search" placeholder="Search reviews..." />
+    </div>
+
+    <button id="scrollToCreate" class="btn btnPrimary">+ Create Review</button>
+  </header>
+
+  <main class="container">
+    <section id="create" class="panel">
+      <h2>Create a review</h2>
+
+      <form id="uploadForm" class="form">
+        <div class="grid2">
+          <label class="field">
+            <span>Your name</span>
+            <input type="text" id="userName" placeholder="e.g. Conor" required />
+          </label>
+
+          <label class="field">
+            <span>User ID</span>
+            <input type="text" id="userID" placeholder="e.g. 7" required />
+          </label>
+        </div>
+
+        <label class="field">
+          <span>Review title</span>
+          <input type="text" id="fileName" placeholder="e.g. Dune: Part Two — ‘Epic scope done right’" required />
+        </label>
+
+        <label class="field">
+          <span>Review text</span>
+          <textarea id="reviewText" rows="6" placeholder="Write your review..." required></textarea>
+        </label>
+
+        <label class="field">
+          <span>Media (image/video)</span>
+          <input type="file" id="fileInput" required />
+        </label>
+
+        <div class="actions">
+          <button type="submit" class="btn btnPrimary">Upload</button>
+          <button type="button" id="clearForm" class="btn">Clear</button>
+        </div>
+
+        <div id="uploadStatus" class="status"></div>
+      </form>
+    </section>
+
+    <section class="panel">
+      <div class="panelHeader">
+        <h2>Recent uploads</h2>
+        <button id="refreshAll" class="btn">Refresh</button>
+      </div>
+
+      <div id="uploads" class="feed"></div>
+      <div id="sentinel" class="sentinel"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
